@@ -20,7 +20,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
+          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
       - name: Deploy to Server
         run: |
           ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'EOF'
