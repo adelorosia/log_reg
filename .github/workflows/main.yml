@@ -1,0 +1,18 @@
+- name: Setup Node.js environment
+    uses: actions/setup-node@v2
+    with:
+      node-version: '20.8.0'
+  - name: Install SSH key
+    uses: webfactory/ssh-agent@v0.5.4
+    with:
+      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+  - name: Deploy to Server
+    run: |
+      ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'EOF'
+      cd /home/adel/apps/log_reg      export PATH=$PATH:/home/adel/.nvm/versions/node/v21.6.1/bin
+      echo $PATH
+      npm install
+      npm run build
+      pm2 reload logreg-app
+      exit
+      EOF
