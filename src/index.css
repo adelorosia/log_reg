@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Salsa&family=Viga&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.active{
+  @apply text-ORANGE_400
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-FONT_SALSA;
+}
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+
+.input{
+  @apply bg-zinc-100 rounded-lg py-3 px-5 w-full outline-0 placeholder:text-center border text-BLACK font-bold text-xl placeholder:uppercase
+}
+
+.btn{
+@apply bg-ORANGE_300 hover:border hover:border-BRAND_COLOR hover:bg-transparent font-FONT_VIGA hover:text-BRAND_COLOR rounded-full cursor-pointer transition-all duration-300;
+}
+
+
+.btn_rounded {
+  @apply flex justify-center items-center w-12 h-12   
+}
+
+.mainColorListStyle {
+  @apply odd:bg-WHITE even:bg-SLATE_200 !text-BACKGROUND hover:bg-ORANGE_300 hover:!text-FOREGROUND
+  px-5 my-3 last:my-0 py-4 rounded-full  cursor-pointer;
+}
+.dark {
+  @apply bg-BACKGROUND text-FOREGROUND;
+}
+
+.light {
+  @apply bg-FOREGROUND text-BACKGROUND;
+}
+
+.darkElement {
+  @apply bg-BLACK text-WHITE;
+}
+.lightElement {
+  @apply bg-WHITE text-BLACK;
+}
+
+
